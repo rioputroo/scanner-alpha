@@ -11,10 +11,10 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <div className="App">
-        <section className="App-section">
-          <div className="App-section-title"> Paydia Scanner</div>
+    <main className='h-full'>
+      <div className="h-screen p-2">
+        <section>
+          <h1 className='flex justify-center font-bold antialiased'>Paydia Scanner</h1>
           <br />
           <br />
           <br />
@@ -26,7 +26,7 @@ export default function Home() {
           />
 
           {/* <ResultContainerPlugin results={decodedText} /> */}
-          <p>{decodedText}</p>
+          <p className='antialiased text-xs my-6 text-wrap break-words'>{decodedText}</p>
         </section>
       </div>
     </main>
