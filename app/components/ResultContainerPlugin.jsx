@@ -16,7 +16,6 @@ function filterResults(results) {
 }
 
 const ResultContainerTable = ({ data }) => {
-    const results = filterResults(data);
     return (
         <table className={'Qrcode-result-table'}>
             <thead>
@@ -27,28 +26,20 @@ const ResultContainerTable = ({ data }) => {
                 </tr>
             </thead>
             <tbody>
-                {
-                    results.map((result, i) => {
-                        console.log(result);
-                        return (<tr key={i}>
-                            <td>{i}</td>
-                            <td>{result.decodedText}</td>
-                            <td>{result.result.format.formatName}</td>
-                        </tr>);
-                    })
-                }
+                <tr>
+                    <td>{{ data }}</td>
+                </tr>
             </tbody>
         </table>
     );
 };
 
 const ResultContainerPlugin = (props) => {
-    const results = filterResults(props.results);
     return (
         <div className='Result-container'>
-            <div className='Result-header'>Scanned results ({results.length})</div>
+            <div className='Result-header'>Scanned results ({props})</div>
             <div className='Result-section'>
-                <ResultContainerTable data={results} />
+                <ResultContainerTable data={props} />
             </div>
         </div>
     );
